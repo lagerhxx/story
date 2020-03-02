@@ -1,0 +1,12 @@
+
+
+#热部署
+spring:
+  devtools:
+    restart:
+      #热部署生效
+      enabled: true
+      #设置热部署需要重启的目录
+      additional-paths: src\main\java
+  thymeleaf:
+    cache: true
