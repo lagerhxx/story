@@ -1,0 +1,17 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.w3.org/1999/xhtml">
+<head>
+    <meta charset="UTF-8">
+    <title>thymeleaf模版引擎</title>
+<!--    <script th:src="@{/static/js/login.js}"></script>-->
+</head>
+<body>
+    <h1>Thymeleaf模板引擎</h1>
+    <span th:text="${user.name}"/><span>，欢迎您！</span>
+
+    <form th:action="@{/postform}" th:object="${user}" method="post" th:method="post">
+        <input type="text" th:field="*{name}"/><!--这里使用*｛name｝是因为我们form表单使用了th：object并且把user对象传入进去，故，我们在这里可以用*代替user对象-->
+        <input type="submit"/>
+    </form>
+</body>
+</html>
